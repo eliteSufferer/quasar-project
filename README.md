@@ -1,4 +1,4 @@
-# Quasar App (vehicle-management)
+# Vehicle Management App (vehicle-management)
 
 A Quasar Project
 
