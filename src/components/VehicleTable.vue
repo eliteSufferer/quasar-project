@@ -13,20 +13,20 @@
           <div class="text-h6">Список автомобилей</div>
           <q-space />
           <q-btn
-            color="secondary"
-            icon="refresh"
-            label="Сбросить изменения"
-            @click="vehicleStore.fetchVehicles"
-            :loading="vehicleStore.loading"
-            class="q-mr-sm"
-          />
-          <q-btn
-            color="primary"
-            icon="cached"
-            label="Обновить"
-            @click="vehicleStore.fetchVehicles"
-            :loading="vehicleStore.loading"
-          />
+          color="secondary"
+          icon="refresh"
+          label="Сбросить изменения"
+          @click="() => vehicleStore.fetchVehicles(true)"
+          :loading="vehicleStore.loading"
+          class="q-mr-sm"
+        />
+        <q-btn
+          color="primary"
+          icon="cached"
+          label="Обновить"
+          @click="() => vehicleStore.fetchVehicles(true)"
+          :loading="vehicleStore.loading"
+        />
         </template>
   
         <template v-slot:body-cell-price="props">
@@ -218,10 +218,7 @@
       deleting.value = false;
     }
   };
-  
-  onMounted(() => {
-    vehicleStore.fetchVehicles();
-  });
+
   </script>
   
   <style scoped>

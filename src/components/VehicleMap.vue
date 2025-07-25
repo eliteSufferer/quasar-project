@@ -4,20 +4,20 @@
         <div class="text-h6">Карта автомобилей</div>
         <q-space />
         <q-btn
-          color="secondary"
-          icon="refresh"
-          label="Сбросить изменения"
-          @click="vehicleStore.fetchVehicles"
-          :loading="vehicleStore.loading"
-          class="q-mr-sm"
-        />
-        <q-btn
-          color="primary"
-          icon="cached"
-          label="Обновить"
-          @click="vehicleStore.fetchVehicles"
-          :loading="vehicleStore.loading"
-        />
+        color="secondary"
+        icon="refresh"
+        label="Сбросить изменения"
+        @click="() => vehicleStore.fetchVehicles(true)"
+        :loading="vehicleStore.loading"
+        class="q-mr-sm"
+      />
+      <q-btn
+        color="primary"
+        icon="cached"
+        label="Обновить"
+        @click="() => vehicleStore.fetchVehicles(true)"
+        :loading="vehicleStore.loading"
+      />
       </div>
       
       <div 
@@ -178,8 +178,6 @@
     
     if (vehicleStore.vehicles.length > 0) {
       addMarkers();
-    } else {
-      await vehicleStore.fetchVehicles();
     }
   });
   </script>

@@ -15,7 +15,11 @@ export const useVehicleStore = defineStore('vehicles', () => {
     return (id: number) => vehicles.value.find(v => v.id === id);
   });
 
-  const fetchVehicles = async () => {
+  const fetchVehicles = async (forceRefresh = false) => {
+    if (!forceRefresh && vehicles.value.length > 0) {
+      return;
+    }
+
     loading.value = true;
     error.value = null;
     

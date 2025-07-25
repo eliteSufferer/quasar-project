@@ -31,9 +31,15 @@
   </template>
   
   <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import VehicleTable from '@/components/VehicleTable.vue';
   import VehicleMap from '@/components/VehicleMap.vue';
+  import { useVehicleStore } from '@/stores/vehicleStore';
   
   const activeTab = ref('table');
+  const vehicleStore = useVehicleStore();
+  
+  onMounted(() => {
+    vehicleStore.fetchVehicles();
+  });
   </script>
