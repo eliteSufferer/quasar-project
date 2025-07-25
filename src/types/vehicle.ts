@@ -1,5 +1,3 @@
-// src/types/vehicle.ts
-
 export interface Vehicle {
     id: number;
     name: string;
@@ -19,8 +17,8 @@ export interface Vehicle {
   export interface TableColumn {
     name: string;
     label: string;
-    field: string | ((row: Vehicle) => any);
+    field: string | ((row: Vehicle) => unknown);
     sortable?: boolean;
     align?: 'left' | 'right' | 'center';
-    format?: (val: any) => string;
+    format?: (val: unknown) => string;
   }
