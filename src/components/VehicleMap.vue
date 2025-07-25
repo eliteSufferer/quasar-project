@@ -11,13 +11,6 @@
         :loading="vehicleStore.loading"
         class="q-mr-sm"
       />
-      <q-btn
-        color="primary"
-        icon="cached"
-        label="Обновить"
-        @click="() => vehicleStore.fetchVehicles(true)"
-        :loading="vehicleStore.loading"
-      />
       </div>
       
       <div 

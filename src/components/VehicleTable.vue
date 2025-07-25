@@ -20,13 +20,6 @@
           :loading="vehicleStore.loading"
           class="q-mr-sm"
         />
-        <q-btn
-          color="primary"
-          icon="cached"
-          label="Обновить"
-          @click="() => vehicleStore.fetchVehicles(true)"
-          :loading="vehicleStore.loading"
-        />
         </template>
   
         <template v-slot:body-cell-price="props">
